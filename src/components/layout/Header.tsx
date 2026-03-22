@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
-import Container from '@/components/common/Container';
+import { Link } from 'react-router-dom';
 import Button from '@/components/common/Button';
-import MobileMenu from './MobileMenu';
-import { NAV_ITEMS } from '@/constants/ui';
+import Container from '@/components/common/Container';
 import { APP_ROUTES } from '@/constants/appRoutes';
-import { classNames } from '@/utils/classNames';
+import { NAV_ITEMS } from '@/constants/ui';
+import MobileMenu from './MobileMenu';
+import NavItem from './NavItem';
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -20,18 +20,7 @@ function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                classNames(
-                  'text-sm font-medium transition-colors hover:text-white',
-                  isActive ? 'text-white' : 'text-slate-400',
-                )
-              }
-            >
-              {item.label}
-            </NavLink>
+            <NavItem key={item.path} to={item.path} label={item.label} />
           ))}
         </nav>
 

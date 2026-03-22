@@ -12,13 +12,19 @@ interface BaseProps {
   variant?: Variant;
 }
 
-type ButtonProps =
-  | (PropsWithChildren<BaseProps & ButtonHTMLAttributes<HTMLButtonElement>> & {
-      href?: never;
-    })
-  | (PropsWithChildren<BaseProps & AnchorHTMLAttributes<HTMLAnchorElement>> & {
-      href: string;
-    });
+type AnchorProps = PropsWithChildren<
+  BaseProps & AnchorHTMLAttributes<HTMLAnchorElement>
+> & {
+  href: string;
+};
+
+type ButtonElementProps = PropsWithChildren<
+  BaseProps & ButtonHTMLAttributes<HTMLButtonElement>
+> & {
+  href?: undefined;
+};
+
+type ButtonProps = AnchorProps | ButtonElementProps;
 
 const variantStyles: Record<Variant, string> = {
   primary: 'bg-primary text-slate-950 hover:opacity-90',
@@ -27,6 +33,10 @@ const variantStyles: Record<Variant, string> = {
   ghost: 'bg-slate-900/40 text-white hover:bg-slate-800',
 };
 
+function isAnchorProps(props: ButtonProps): props is AnchorProps {
+  return typeof (props as AnchorProps).href === 'string';
+}
+
 function Button(props: ButtonProps) {
   const commonClass = classNames(
     'inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200',
@@ -34,7 +44,7 @@ function Button(props: ButtonProps) {
     props.className,
   );
 
-  if ('href' in props && props.href) {
+  if (isAnchorProps(props)) {
     const { children, href, className, variant, ...rest } = props;
     return (
       <a href={href} className={commonClass} {...rest}>

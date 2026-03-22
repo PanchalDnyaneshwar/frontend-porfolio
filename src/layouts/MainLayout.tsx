@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ScrollToTop from '@/components/layout/ScrollToTop';
+import Header from '@/components/layout/Header';
 import PageWrapper from '@/components/layout/PageWrapper';
+import ScrollToTop from '@/components/layout/ScrollToTop';
+import ThemeBackdrop from '@/components/layout/ThemeBackdrop';
 
 function MainLayout() {
   return (
     <div className="min-h-screen bg-background text-slate-100">
+      <ThemeBackdrop />
       <ScrollToTop />
       <Header />
       <PageWrapper>

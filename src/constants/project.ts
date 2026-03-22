@@ -1,5 +1,6 @@
 export const PROJECT_PAGE_TEXT = {
   title: 'Projects',
   description:
-    'A showcase of full stack work, frontend interfaces, dashboards and production-focused builds.',
+    'A showcase of full stack applications, frontend interfaces, admin panels and production-focused builds.',
+  featuredTitle: 'Highlighted Projects',
 };

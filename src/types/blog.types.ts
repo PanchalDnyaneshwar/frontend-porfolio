@@ -10,4 +10,10 @@ export interface Blog {
   isPublished: boolean;
   publishedAt?: string;
   readTime?: number;
+  featured?: boolean;
+}
+
+export interface BlogFilterState {
+  search: string;
+  category: string;
 }

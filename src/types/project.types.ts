@@ -14,3 +14,8 @@ export interface Project {
   sortOrder: number;
   isPublished: boolean;
 }
+
+export interface ProjectFilterState {
+  search: string;
+  category: string;
+}

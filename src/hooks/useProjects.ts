@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProjectBySlug, getProjects } from '@/api/project.api';
+import { getProjectBySlug, getProjects } from '@/apis/project.api';
 import { QUERY_KEYS } from '@/constants/queryKeys';
 
 export const useProjects = () =>

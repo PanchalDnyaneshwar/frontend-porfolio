@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { queryClient, QueryProvider } from '@/lib/react-query';
-import '@/styles/index.css';
-import '@/styles/utilities.css';
+import '@/styles/tailwind.css';
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -5,3 +5,7 @@ export interface ContactPayload {
   subject: string;
   message: string;
 }
+
+export interface NewsletterPayload {
+  email: string;
+}
