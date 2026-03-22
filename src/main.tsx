@@ -1,7 +1,17 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.js'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import { queryClient, QueryProvider } from '@/lib/react-query';
+import '@/styles/index.css';
+import '@/styles/utilities.css';
 
-createRoot(document.getElementById('root')).render(
-    <App />
-)
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <QueryProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryProvider>
+  </React.StrictMode>,
+);
