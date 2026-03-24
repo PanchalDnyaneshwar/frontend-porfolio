@@ -8,17 +8,21 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 function Input({ label, error, className, ...props }: InputProps) {
   return (
-    <div>
-      {label ? <label className="mb-2 block text-sm font-medium text-slate-300">{label}</label> : null}
+    <div className="space-y-2">
+      {label ? (
+        <label className="block text-sm font-semibold tracking-[-0.01em] text-slate-200">
+          {label}
+        </label>
+      ) : null}
       <input
         className={classNames(
-          'w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none focus:border-primary',
+          'w-full rounded-2xl border border-slate-700/90 bg-slate-950/90 px-4 py-3.5 text-white shadow-soft outline-none transition-all duration-200 placeholder:text-slate-500 focus:border-primary focus:ring-4 focus:ring-primary/10',
           error ? 'border-danger' : '',
           className,
         )}
         {...props}
       />
-      {error ? <p className="mt-1 text-xs text-danger">{error}</p> : null}
+      {error ? <p className="text-xs font-medium text-danger">{error}</p> : null}
     </div>
   );
 }

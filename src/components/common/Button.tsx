@@ -3,6 +3,7 @@ import type {
   ButtonHTMLAttributes,
   PropsWithChildren,
 } from 'react';
+import { Link } from 'react-router-dom';
 import { classNames } from '@/utils/classNames';
 
 type Variant = 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -27,25 +28,42 @@ type ButtonElementProps = PropsWithChildren<
 type ButtonProps = AnchorProps | ButtonElementProps;
 
 const variantStyles: Record<Variant, string> = {
-  primary: 'bg-primary text-slate-950 hover:opacity-90',
-  secondary: 'bg-secondary text-white hover:opacity-90',
-  outline: 'border border-slate-700 bg-transparent text-white hover:bg-slate-800',
-  ghost: 'bg-slate-900/40 text-white hover:bg-slate-800',
+  primary:
+    'bg-primary text-slate-950 shadow-soft hover:-translate-y-0.5 hover:opacity-95',
+  secondary:
+    'bg-secondary text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95',
+  outline:
+    'border border-slate-700 bg-transparent text-white hover:-translate-y-0.5 hover:border-slate-500 hover:bg-slate-800',
+  ghost:
+    'bg-slate-900/50 text-white hover:-translate-y-0.5 hover:bg-slate-800',
 };
 
 function isAnchorProps(props: ButtonProps): props is AnchorProps {
   return typeof (props as AnchorProps).href === 'string';
 }
 
+function isInternalHref(href: string) {
+  return href.startsWith('/') && !href.startsWith('//');
+}
+
 function Button(props: ButtonProps) {
   const commonClass = classNames(
-    'inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200',
+    'inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold tracking-[-0.01em] transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-primary/10',
     variantStyles[props.variant || 'primary'],
     props.className,
   );
 
   if (isAnchorProps(props)) {
     const { children, href, className, variant, ...rest } = props;
+
+    if (isInternalHref(href)) {
+      return (
+        <Link to={href} className={commonClass}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} className={commonClass} {...rest}>
         {children}

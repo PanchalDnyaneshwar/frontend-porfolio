@@ -14,14 +14,26 @@ function ProjectFilterBar({
   onChange,
 }: ProjectFilterBarProps) {
   return (
-    <div className="mb-8 grid gap-4 rounded-3xl border border-slate-800 bg-slate-900/40 p-5 md:grid-cols-2">
+    <div className="mb-8 rounded-[2rem] border border-slate-800 bg-slate-900/45 p-5 shadow-soft sm:p-6">
+      <div className="mb-5">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
+          Filter projects
+        </p>
+        <p className="mt-2 text-sm text-slate-400">
+          Narrow the project list by keyword or category.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
       <Input
+        label="Search"
         placeholder="Search projects..."
         value={filters.search}
         onChange={(e) => onChange({ ...filters, search: e.target.value })}
       />
 
       <Select
+        label="Category"
         value={filters.category}
         onChange={(e) => onChange({ ...filters, category: e.target.value })}
       >
@@ -32,6 +44,7 @@ function ProjectFilterBar({
           </option>
         ))}
       </Select>
+      </div>
     </div>
   );
 }

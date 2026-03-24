@@ -59,7 +59,7 @@ function AboutPage() {
 
       <section className="section-space pt-6">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 xl:grid-cols-3">
             <ProfileSummaryCard profile={profile} />
             <PersonalInfoCard profile={profile} />
             <ExperienceSummaryCard
@@ -68,7 +68,7 @@ function AboutPage() {
             />
           </div>
 
-          <div className="mt-16">
+          <div className="mt-14 sm:mt-16">
             <SectionHeading
               eyebrow="Skills"
               title="Technical Skills"
@@ -77,7 +77,7 @@ function AboutPage() {
             <SkillsGrid groupedSkills={groupedSkills} />
           </div>
 
-          <div className="mt-16">
+          <div className="mt-14 sm:mt-16">
             <SectionHeading
               eyebrow="Experience"
               title="Professional Experience"

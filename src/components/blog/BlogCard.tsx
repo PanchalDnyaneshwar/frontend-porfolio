@@ -11,16 +11,17 @@ interface BlogCardProps {
 
 function BlogCard({ blog }: BlogCardProps) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-soft">
+    <article className="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/45 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
       <div className="h-56 overflow-hidden bg-slate-950">
         <ImageWithFallback
           src={blog.featuredImage}
           alt={blog.title}
+          className="transition-transform duration-500 group-hover:scale-105"
           fallbackLabel="Blog Cover"
         />
       </div>
 
-      <div className="p-6">
+      <div className="p-6 sm:p-7">
         <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
           <span>{formatDate(blog.publishedAt)}</span>
           <span>•</span>
@@ -34,7 +35,10 @@ function BlogCard({ blog }: BlogCardProps) {
         </div>
 
         <h3 className="mt-4 text-xl font-semibold text-white">
-          <Link to={`/blog/${blog.slug}`} className="hover:text-primary">
+          <Link
+            to={`/blog/${blog.slug}`}
+            className="transition-colors hover:text-primary"
+          >
             {blog.title}
           </Link>
         </h3>
@@ -48,6 +52,15 @@ function BlogCard({ blog }: BlogCardProps) {
             ))}
           </div>
         ) : null}
+
+        <div className="mt-6 border-t border-slate-800 pt-5">
+          <Link
+            to={`/blog/${blog.slug}`}
+            className="text-sm font-semibold text-primary transition-colors hover:text-white"
+          >
+            Read Article
+          </Link>
+        </div>
       </div>
     </article>
   );

@@ -8,13 +8,13 @@ interface ProjectDetailsHeroProps {
 function ProjectDetailsHero({ project }: ProjectDetailsHeroProps) {
   return (
     <div className="mb-10">
-      <p className="text-sm uppercase tracking-[0.2em] text-primary">
+      <p className="display-kicker text-primary">
         {project.category || 'Project'}
       </p>
-      <h1 className="mt-3 text-4xl font-bold text-white sm:text-5xl">
+      <h1 className="display-title mt-3 text-4xl text-white sm:text-5xl">
         {project.title}
       </h1>
-      <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-400">
+      <p className="display-copy mt-6 max-w-4xl text-lg text-slate-400">
         {project.fullDescription || project.shortDescription}
       </p>
 

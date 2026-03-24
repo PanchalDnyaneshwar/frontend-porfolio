@@ -30,7 +30,8 @@ function ContactInfoCard({ profile }: ContactInfoCardProps) {
       </div>
 
       <p className="mt-8 leading-8 text-slate-400">
-        I’m open to full stack development work, freelance opportunities, dashboard systems, UI implementation and backend integration projects.
+        I'm open to full stack development work, freelance opportunities,
+        dashboard systems, UI implementation and backend integration projects.
       </p>
     </div>
   );

@@ -40,7 +40,7 @@ function ContactPage() {
 
       <section className="section-space pt-6">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-8 xl:grid-cols-[0.92fr_1.08fr]">
             <div className="space-y-6">
               <ContactInfoCard profile={profile} />
               <ContactSocialCard profile={profile} />
@@ -50,7 +50,7 @@ function ContactPage() {
             <ContactForm />
           </div>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div className="mt-8 grid gap-8 xl:grid-cols-[1fr_1fr]">
             <MapCard mapUrl={settings?.contactInfo?.mapUrl} />
             <NewsletterForm />
           </div>

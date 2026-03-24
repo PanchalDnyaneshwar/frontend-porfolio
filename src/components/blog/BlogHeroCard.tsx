@@ -14,19 +14,19 @@ function BlogHeroCard({ blog }: BlogHeroCardProps) {
     <div className="mb-10 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-soft">
       <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary">
+          <p className="display-kicker text-primary">
             {blog.category || 'Featured'}
           </p>
-          <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="display-title mt-4 text-3xl text-white sm:text-4xl">
             {blog.title}
           </h2>
-          <p className="mt-5 line-clamp-4 text-lg leading-8 text-slate-400">
+          <p className="display-copy mt-5 line-clamp-4 text-lg text-slate-400">
             {blog.excerpt}
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-400">
             <span>{formatDate(blog.publishedAt)}</span>
-            <span>•</span>
+            <span>&bull;</span>
             <span>{formatReadTime(blog.readTime)}</span>
           </div>
         </div>

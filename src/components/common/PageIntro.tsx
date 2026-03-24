@@ -8,13 +8,13 @@ function PageIntro({ eyebrow, title, description }: PageIntroProps) {
   return (
     <div className="mb-12 max-w-3xl">
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+        <p className="display-kicker mb-3 text-primary">
           {eyebrow}
         </p>
       ) : null}
-      <h1 className="text-4xl font-bold text-white sm:text-5xl">{title}</h1>
+      <h1 className="display-title text-4xl text-white sm:text-5xl">{title}</h1>
       {description ? (
-        <p className="mt-5 text-lg leading-8 text-slate-400">{description}</p>
+        <p className="display-copy mt-5 text-lg text-slate-400">{description}</p>
       ) : null}
     </div>
   );

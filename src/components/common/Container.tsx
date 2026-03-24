@@ -7,7 +7,12 @@ interface ContainerProps extends PropsWithChildren {
 
 function Container({ children, className }: ContainerProps) {
   return (
-    <div className={classNames('mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8', className)}>
+    <div
+      className={classNames(
+        'mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 xl:px-10',
+        className,
+      )}
+    >
       {children}
     </div>
   );

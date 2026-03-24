@@ -14,6 +14,10 @@ import { useBlogs } from '@/hooks/useBlogs';
 
 function BlogPage() {
   const blogsQuery = useBlogs();
+  const blogs = blogsQuery.data?.data || [];
+  const featuredBlog = blogs.find((blog) => blog.featured) || blogs[0];
+  const { filters, setFilters, categories, filteredBlogs } =
+    useBlogFilters(blogs);
 
   if (blogsQuery.isLoading) return <PageLoader />;
 
@@ -24,10 +28,6 @@ function BlogPage() {
       </Container>
     );
   }
-
-  const blogs = blogsQuery.data?.data || [];
-  const featuredBlog = blogs.find((blog) => blog.featured) || blogs[0];
-  const { filters, setFilters, categories, filteredBlogs } = useBlogFilters(blogs);
 
   return (
     <>
@@ -51,14 +51,16 @@ function BlogPage() {
             onChange={setFilters}
           />
 
-          {filteredBlogs.length ? (
-            <BlogGrid blogs={filteredBlogs} />
-          ) : (
-            <EmptyState
-              title="No blogs match your filters"
-              description="Try another search term or category."
-            />
-          )}
+          <div className="mt-8">
+            {filteredBlogs.length ? (
+              <BlogGrid blogs={filteredBlogs} />
+            ) : (
+              <EmptyState
+                title="No blogs match your filters"
+                description="Try another search term or category."
+              />
+            )}
+          </div>
 
           <div className="mt-16">
             <NewsletterForm />

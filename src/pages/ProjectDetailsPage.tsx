@@ -45,16 +45,16 @@ function ProjectDetailsPage() {
       <section className="section-space">
         <Container>
           {project.thumbnail ? (
-            <div className="mb-10 overflow-hidden rounded-3xl border border-slate-800 bg-slate-950">
+            <div className="mb-8 overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-soft sm:mb-10">
               <img
                 src={project.thumbnail}
                 alt={project.title}
-                className="h-[420px] w-full object-cover"
+                className="h-[240px] w-full object-cover sm:h-[320px] lg:h-[420px]"
               />
             </div>
           ) : null}
 
-          <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10">
             <div>
               <ProjectDetailsHero project={project} />
               <ProjectGallery title={project.title} images={project.images || []} />

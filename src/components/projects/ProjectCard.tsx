@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-soft transition-all duration-300 hover:-translate-y-1">
+    <article className="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/45 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
       <div className="h-56 overflow-hidden bg-slate-950">
         <ImageWithFallback
           src={project.thumbnail}
@@ -20,7 +20,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
 
-      <div className="p-6">
+      <div className="p-6 sm:p-7">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-xl font-semibold text-white">{project.title}</h3>
@@ -44,8 +44,11 @@ function ProjectCard({ project }: ProjectCardProps) {
           </div>
         ) : null}
 
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Link to={`/projects/${project.slug}`} className="text-sm font-semibold text-primary">
+        <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-slate-800 pt-5">
+          <Link
+            to={`/projects/${project.slug}`}
+            className="text-sm font-semibold text-primary transition-colors hover:text-white"
+          >
             View Details
           </Link>
 
@@ -54,7 +57,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white"
+              className="inline-flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
             >
               <ExternalLink size={16} />
               Live
@@ -66,7 +69,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white"
+              className="inline-flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
             >
               <Github size={16} />
               GitHub

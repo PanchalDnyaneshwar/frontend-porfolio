@@ -10,14 +10,26 @@ interface BlogFilterBarProps {
 
 function BlogFilterBar({ filters, categories, onChange }: BlogFilterBarProps) {
   return (
-    <div className="mb-8 grid gap-4 rounded-3xl border border-slate-800 bg-slate-900/40 p-5 md:grid-cols-2">
+    <div className="mb-8 rounded-[2rem] border border-slate-800 bg-slate-900/45 p-5 shadow-soft sm:p-6">
+      <div className="mb-5">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
+          Filter articles
+        </p>
+        <p className="mt-2 text-sm text-slate-400">
+          Search by title or narrow the list by category.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
       <Input
+        label="Search"
         placeholder="Search blogs..."
         value={filters.search}
         onChange={(e) => onChange({ ...filters, search: e.target.value })}
       />
 
       <Select
+        label="Category"
         value={filters.category}
         onChange={(e) => onChange({ ...filters, category: e.target.value })}
       >
@@ -28,6 +40,7 @@ function BlogFilterBar({ filters, categories, onChange }: BlogFilterBarProps) {
           </option>
         ))}
       </Select>
+      </div>
     </div>
   );
 }

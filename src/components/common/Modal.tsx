@@ -14,8 +14,13 @@ function Modal({ open, onClose, title, children }: ModalProps) {
       <div className="w-full max-w-lg rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-soft">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold text-white">{title}</h3>
-          <button type="button" onClick={onClose} className="text-slate-400 hover:text-white">
-            ✕
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-slate-400 hover:text-white"
+            aria-label="Close modal"
+          >
+            x
           </button>
         </div>
         {children}

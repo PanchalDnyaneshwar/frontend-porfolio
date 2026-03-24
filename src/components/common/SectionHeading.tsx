@@ -12,14 +12,22 @@ function SectionHeading({
   centered = false,
 }: SectionHeadingProps) {
   return (
-    <div className={centered ? 'mx-auto mb-12 max-w-2xl text-center' : 'mb-12 max-w-2xl'}>
+    <div
+      className={
+        centered
+          ? 'mx-auto mb-10 max-w-2xl text-center sm:mb-12'
+          : 'mb-10 max-w-2xl sm:mb-12'
+      }
+    >
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="display-kicker mb-3 text-primary">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>
-      {description ? <p className="mt-4 text-base leading-7 text-slate-400">{description}</p> : null}
+      <h2 className="display-title text-3xl text-white sm:text-4xl">{title}</h2>
+      {description ? (
+        <p className="display-copy mt-4 max-w-xl text-base text-slate-400">{description}</p>
+      ) : null}
     </div>
   );
 }

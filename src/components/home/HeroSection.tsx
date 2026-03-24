@@ -1,4 +1,5 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Button from '@/components/common/Button';
 import Container from '@/components/common/Container';
 import SocialLinks from '@/components/layout/SocialLinks';
@@ -9,23 +10,37 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ profile }: HeroSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+  const highlightItems = [
+    { title: 'Frontend', value: 'React + Tailwind' },
+    { title: 'Backend', value: 'NestJS APIs' },
+    { title: 'Database', value: 'MongoDB Models' },
+    { title: 'Quality', value: 'Responsive UI' },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-hero-glow bg-cover">
       <div className="absolute inset-0 bg-hero-grid bg-grid opacity-20" />
-      <Container className="relative grid min-h-[calc(100vh-64px)] items-center gap-12 py-20 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent" />
+      <Container className="relative grid min-h-[calc(100vh-72px)] items-center gap-12 py-14 sm:py-16 lg:grid-cols-[1.18fr_0.82fr] lg:gap-16 lg:py-20 xl:py-24">
+        <motion.div
+          className="max-w-3xl"
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+        >
+          <p className="display-kicker mb-4 text-primary">
             Full Stack Developer
           </p>
 
-          <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="display-title text-4xl leading-[1.02] text-white sm:text-5xl md:text-6xl xl:text-[4.5rem]">
             {profile?.fullName || 'Dnyaneshwar Panchal'}
-            <span className="mt-2 block text-slate-300">
+            <span className="mt-3 block text-slate-300">
               {profile?.title || 'Building scalable and modern web applications.'}
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+          <p className="display-copy mt-6 max-w-2xl text-base text-slate-400 sm:text-lg">
             {profile?.shortBio ||
               'I build responsive, reliable and polished digital experiences using React, Tailwind CSS, NestJS and MongoDB with clean architecture and strong business logic.'}
           </p>
@@ -46,7 +61,24 @@ function HeroSection({ profile }: HeroSectionProps) {
             )}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-5">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:max-w-2xl">
+            {highlightItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="rounded-2xl border border-slate-800/80 bg-slate-900/45 px-4 py-4 shadow-soft"
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
+                animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.08 + index * 0.04 }}
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-base font-semibold text-white">{item.value}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-5">
             <SocialLinks links={profile?.socialLinks} email={profile?.email} />
 
             {profile?.socialLinks?.github ? (
@@ -73,19 +105,24 @@ function HeroSection({ profile }: HeroSectionProps) {
               </a>
             ) : null}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto w-full max-w-md">
-          <div className="glass-card rounded-3xl p-6 shadow-soft">
-            <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950">
+        <motion.div
+          className="mx-auto w-full max-w-md lg:max-w-lg"
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 28, scale: 0.98 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
+        >
+          <div className="glass-card rounded-[2rem] p-4 shadow-soft sm:p-6">
+            <div className="overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-950">
               {profile?.profileImage ? (
                 <img
                   src={profile.profileImage}
                   alt={profile.fullName || 'Profile'}
-                  className="h-[360px] w-full object-cover"
+                  className="h-[300px] w-full object-cover sm:h-[360px] lg:h-[420px]"
                 />
               ) : (
-                <div className="flex h-[360px] items-center justify-center">
+                <div className="flex h-[300px] items-center justify-center sm:h-[360px] lg:h-[420px]">
                   <div className="text-center">
                     <p className="text-6xl font-bold text-primary">DP</p>
                     <p className="mt-3 text-sm text-slate-500">Developer Portfolio</p>
@@ -94,26 +131,19 @@ function HeroSection({ profile }: HeroSectionProps) {
               )}
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                <p className="text-xl font-bold text-white">React</p>
-                <p className="mt-1 text-sm text-slate-400">Frontend</p>
-              </div>
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                <p className="text-xl font-bold text-white">NestJS</p>
-                <p className="mt-1 text-sm text-slate-400">Backend</p>
-              </div>
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                <p className="text-xl font-bold text-white">MongoDB</p>
-                <p className="mt-1 text-sm text-slate-400">Database</p>
-              </div>
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                <p className="text-xl font-bold text-white">Responsive</p>
-                <p className="mt-1 text-sm text-slate-400">All Devices</p>
-              </div>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:gap-4">
+              {highlightItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"
+                >
+                  <p className="text-lg font-bold text-white sm:text-xl">{item.value}</p>
+                  <p className="mt-1 text-sm text-slate-400">{item.title}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
