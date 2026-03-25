@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import Button from '@/components/common/Button';
 import Container from '@/components/common/Container';
 import PageSeo from '@/components/common/PageSeo';
@@ -12,10 +12,10 @@ function NotFoundPage() {
       />
       <section className="section-space">
         <Container className="text-center">
-          <div className="mx-auto max-w-2xl rounded-[2rem] border border-slate-800 bg-slate-900/40 p-10 shadow-soft">
+          <div className="mx-auto max-w-2xl rounded-[2rem] border border-neutral-200 bg-white p-10 shadow-soft">
             <p className="display-kicker text-primary">404 Error</p>
-            <h1 className="display-title mt-4 text-4xl text-white">Page not found</h1>
-            <p className="mt-4 text-slate-400">
+            <h1 className="display-title mt-4 text-4xl">Page not found</h1>
+            <p className="mt-4 text-zinc-600">
               The page you are looking for does not exist or may have been moved.
             </p>
             <div className="mt-8">
@@ -31,3 +31,6 @@ function NotFoundPage() {
 }
 
 export default NotFoundPage;
+
+
+

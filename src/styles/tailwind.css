@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,8 +13,11 @@
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background: #081120;
-    color: #e2e8f0;
+    background:
+      radial-gradient(circle at top left, rgba(53, 171, 161, 0.06), transparent 24%),
+      radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 22%),
+      linear-gradient(180deg, #fcfaf6 0%, #f6f0e7 52%, #f2ece3 100%);
+    color: #76768f;
     font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
       BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 15.5px;
@@ -88,6 +91,11 @@
   .display-title {
     font-family: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
     @apply font-semibold tracking-[-0.04em];
+    color: #234a6e;
+  }
+
+  .heading-ink {
+    color: #051d33;
   }
 
   .display-copy {
@@ -96,24 +104,28 @@
 
   .shadow-soft {
     box-shadow:
-      0 10px 30px rgba(2, 8, 23, 0.28),
-      0 1px 2px rgba(2, 8, 23, 0.18);
+      0 20px 44px rgba(30, 41, 59, 0.08),
+      0 2px 6px rgba(30, 41, 59, 0.04);
   }
 
   .glass-card {
-    @apply border border-slate-800/80 bg-slate-900/50 backdrop-blur-xl;
+    @apply border border-neutral-200 backdrop-blur-xl;
+    background-color: rgba(252, 250, 246, 0.92);
   }
 
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.14) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .bg-hero-glow {
     background-image:
-      radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 26%),
-      radial-gradient(circle at top right, rgba(99, 102, 241, 0.12), transparent 24%);
+      radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 30%),
+      radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 26%),
+      radial-gradient(circle at bottom center, rgba(217, 119, 6, 0.08), transparent 32%);
   }
 }
+
+

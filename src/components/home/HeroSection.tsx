@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+﻿import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Button from '@/components/common/Button';
 import Container from '@/components/common/Container';
@@ -33,14 +33,14 @@ function HeroSection({ profile }: HeroSectionProps) {
             Full Stack Developer
           </p>
 
-          <h1 className="display-title text-4xl leading-[1.02] text-white sm:text-5xl md:text-6xl xl:text-[4.5rem]">
+          <h1 className="display-title text-4xl leading-[1.02] sm:text-5xl md:text-6xl xl:text-[4.5rem]">
             {profile?.fullName || 'Dnyaneshwar Panchal'}
-            <span className="mt-3 block text-slate-300">
+            <span className="mt-3 block text-zinc-700">
               {profile?.title || 'Building scalable and modern web applications.'}
             </span>
           </h1>
 
-          <p className="display-copy mt-6 max-w-2xl text-base text-slate-400 sm:text-lg">
+          <p className="display-copy mt-6 max-w-2xl text-base text-zinc-600 sm:text-lg">
             {profile?.shortBio ||
               'I build responsive, reliable and polished digital experiences using React, Tailwind CSS, NestJS and MongoDB with clean architecture and strong business logic.'}
           </p>
@@ -65,7 +65,7 @@ function HeroSection({ profile }: HeroSectionProps) {
             {highlightItems.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="rounded-2xl border border-slate-800/80 bg-slate-900/45 px-4 py-4 shadow-soft"
+                className="rounded-2xl border border-neutral-200 bg-[#fcfaf6] px-4 py-4 shadow-soft"
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
                 animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.08 + index * 0.04 }}
@@ -73,7 +73,7 @@ function HeroSection({ profile }: HeroSectionProps) {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
                   {item.title}
                 </p>
-                <p className="mt-2 text-base font-semibold text-white">{item.value}</p>
+                <p className="mt-2 text-base font-semibold text-zinc-900">{item.value}</p>
               </motion.div>
             ))}
           </div>
@@ -86,7 +86,7 @@ function HeroSection({ profile }: HeroSectionProps) {
                 href={profile.socialLinks.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-2 text-slate-300 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-[#fcfaf6] px-4 py-2 text-zinc-700 hover:text-zinc-900"
               >
                 <Github size={16} />
                 GitHub
@@ -98,7 +98,7 @@ function HeroSection({ profile }: HeroSectionProps) {
                 href={profile.socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-2 text-slate-300 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-[#fcfaf6] px-4 py-2 text-zinc-700 hover:text-zinc-900"
               >
                 <Linkedin size={16} />
                 LinkedIn
@@ -114,7 +114,7 @@ function HeroSection({ profile }: HeroSectionProps) {
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
         >
           <div className="glass-card rounded-[2rem] p-4 shadow-soft sm:p-6">
-            <div className="overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-950">
+            <div className="overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-[#f3ede4]">
               {profile?.profileImage ? (
                 <img
                   src={profile.profileImage}
@@ -125,7 +125,7 @@ function HeroSection({ profile }: HeroSectionProps) {
                 <div className="flex h-[300px] items-center justify-center sm:h-[360px] lg:h-[420px]">
                   <div className="text-center">
                     <p className="text-6xl font-bold text-primary">DP</p>
-                    <p className="mt-3 text-sm text-slate-500">Developer Portfolio</p>
+                    <p className="mt-3 text-sm text-zinc-500">Developer Portfolio</p>
                   </div>
                 </div>
               )}
@@ -135,10 +135,10 @@ function HeroSection({ profile }: HeroSectionProps) {
               {highlightItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"
+                  className="rounded-2xl border border-neutral-200 bg-[#f5f1ea]/90 p-4"
                 >
-                  <p className="text-lg font-bold text-white sm:text-xl">{item.value}</p>
-                  <p className="mt-1 text-sm text-slate-400">{item.title}</p>
+                  <p className="text-lg font-bold text-zinc-900 sm:text-xl">{item.value}</p>
+                  <p className="mt-1 text-sm text-zinc-600">{item.title}</p>
                 </div>
               ))}
             </div>
@@ -150,3 +150,8 @@ function HeroSection({ profile }: HeroSectionProps) {
 }
 
 export default HeroSection;
+
+
+
+
+

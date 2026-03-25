@@ -1,4 +1,4 @@
-import type { Profile } from '@/types/profile.types';
+﻿import type { Profile } from '@/types/profile.types';
 
 interface ContactInfoCardProps {
   profile?: Profile | null;
@@ -6,10 +6,10 @@ interface ContactInfoCardProps {
 
 function ContactInfoCard({ profile }: ContactInfoCardProps) {
   return (
-    <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 shadow-soft">
-      <h3 className="text-xl font-semibold text-white">Contact Information</h3>
+    <div className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft">
+      <h3 className="text-xl font-semibold text-zinc-900">Contact Information</h3>
 
-      <div className="mt-6 space-y-4 text-slate-300">
+      <div className="mt-6 space-y-4 text-zinc-700">
         {profile?.email ? (
           <p>
             <span className="text-primary">Email:</span> {profile.email}
@@ -29,7 +29,7 @@ function ContactInfoCard({ profile }: ContactInfoCardProps) {
         ) : null}
       </div>
 
-      <p className="mt-8 leading-8 text-slate-400">
+      <p className="mt-8 leading-8 text-zinc-600">
         I'm open to full stack development work, freelance opportunities,
         dashboard systems, UI implementation and backend integration projects.
       </p>
@@ -38,3 +38,7 @@ function ContactInfoCard({ profile }: ContactInfoCardProps) {
 }
 
 export default ContactInfoCard;
+
+
+
+

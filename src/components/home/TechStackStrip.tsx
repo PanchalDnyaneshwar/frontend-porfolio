@@ -1,4 +1,4 @@
-import Section from '@/components/common/Section';
+﻿import Section from '@/components/common/Section';
 
 const technologies = [
   'React.js',
@@ -14,11 +14,11 @@ const technologies = [
 function TechStackStrip() {
   return (
     <Section className="py-8">
-      <div className="flex flex-wrap items-center justify-center gap-3 rounded-3xl border border-slate-800 bg-slate-900/30 p-5">
+      <div className="flex flex-wrap items-center justify-center gap-3 rounded-3xl border border-neutral-200 bg-[#fcfaf6]/[0.72] p-5">
         {technologies.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-300"
+            className="rounded-full border border-neutral-300 bg-[#f5f1ea]/90 px-4 py-2 text-sm text-zinc-700"
           >
             {item}
           </span>
@@ -29,3 +29,7 @@ function TechStackStrip() {
 }
 
 export default TechStackStrip;
+
+
+
+

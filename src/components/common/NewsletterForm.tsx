@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import Button from './Button';
 import Input from './Input';
 import { useNewsletter } from '@/hooks/useNewsletter';
@@ -27,10 +27,10 @@ function NewsletterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 shadow-soft"
+      className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft"
     >
-      <h3 className="text-xl font-semibold text-white">Subscribe to updates</h3>
-      <p className="mt-2 text-sm leading-7 text-slate-400">
+      <h3 className="text-xl font-semibold text-zinc-900">Subscribe to updates</h3>
+      <p className="mt-2 text-sm leading-7 text-zinc-600">
         Get notified about new articles, projects and portfolio updates.
       </p>
 
@@ -61,3 +61,6 @@ function NewsletterForm() {
 }
 
 export default NewsletterForm;
+
+
+

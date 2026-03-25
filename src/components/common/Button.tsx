@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   PropsWithChildren,
@@ -29,13 +29,13 @@ type ButtonProps = AnchorProps | ButtonElementProps;
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    'bg-primary text-slate-950 shadow-soft hover:-translate-y-0.5 hover:opacity-95',
+    'bg-primary text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95',
   secondary:
     'bg-secondary text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95',
   outline:
-    'border border-slate-700 bg-transparent text-white hover:-translate-y-0.5 hover:border-slate-500 hover:bg-slate-800',
+    'border border-neutral-300 bg-transparent text-zinc-900 hover:-translate-y-0.5 hover:border-neutral-400 hover:bg-[#f1ebe2]',
   ghost:
-    'bg-slate-900/50 text-white hover:-translate-y-0.5 hover:bg-slate-800',
+    'bg-[#fcfaf6] text-zinc-900 hover:-translate-y-0.5 hover:bg-[#f1ebe2]',
 };
 
 function isAnchorProps(props: ButtonProps): props is AnchorProps {
@@ -80,3 +80,8 @@ function Button(props: ButtonProps) {
 }
 
 export default Button;
+
+
+
+
+

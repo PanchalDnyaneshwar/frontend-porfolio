@@ -1,4 +1,4 @@
-import SkillCard from './SkillCard';
+﻿import SkillCard from './SkillCard';
 import type { Skill } from '@/types/skill.types';
 
 interface SkillCategorySectionProps {
@@ -10,8 +10,8 @@ function SkillCategorySection({ title, skills }: SkillCategorySectionProps) {
   if (!skills.length) return null;
 
   return (
-    <section className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 shadow-soft">
-      <h3 className="text-2xl font-semibold text-white">{title}</h3>
+    <section className="rounded-3xl border border-neutral-200 bg-[#fffaf3] p-6 shadow-soft">
+      <h3 className="text-2xl font-semibold text-zinc-900">{title}</h3>
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((skill) => (
           <SkillCard key={skill._id} skill={skill} />
@@ -22,3 +22,5 @@ function SkillCategorySection({ title, skills }: SkillCategorySectionProps) {
 }
 
 export default SkillCategorySection;
+
+

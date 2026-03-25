@@ -1,4 +1,4 @@
-import BlogGrid from './BlogGrid';
+﻿import BlogGrid from './BlogGrid';
 import type { Blog } from '@/types/blog.types';
 
 interface RelatedBlogsProps {
@@ -13,7 +13,7 @@ function RelatedBlogs({ blogs, currentSlug }: RelatedBlogsProps) {
 
   return (
     <div className="mt-16">
-      <h2 className="text-2xl font-semibold text-white">Related Articles</h2>
+      <h2 className="text-2xl font-semibold text-zinc-900">Related Articles</h2>
       <div className="mt-6">
         <BlogGrid blogs={related} />
       </div>
@@ -22,3 +22,4 @@ function RelatedBlogs({ blogs, currentSlug }: RelatedBlogsProps) {
 }
 
 export default RelatedBlogs;
+

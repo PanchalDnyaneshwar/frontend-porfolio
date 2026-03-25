@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import Badge from '@/components/common/Badge';
 import ImageWithFallback from '@/components/common/ImageWithFallback';
 import { formatDate } from '@/utils/date';
@@ -11,8 +11,8 @@ interface BlogCardProps {
 
 function BlogCard({ blog }: BlogCardProps) {
   return (
-    <article className="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/45 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
-      <div className="h-56 overflow-hidden bg-slate-950">
+    <article className="group overflow-hidden rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
+      <div className="h-56 overflow-hidden bg-[#f3ede4]">
         <ImageWithFallback
           src={blog.featuredImage}
           alt={blog.title}
@@ -22,19 +22,19 @@ function BlogCard({ blog }: BlogCardProps) {
       </div>
 
       <div className="p-6 sm:p-7">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-600">
           <span>{formatDate(blog.publishedAt)}</span>
-          <span>•</span>
+          <span>â€¢</span>
           <span>{formatReadTime(blog.readTime)}</span>
           {blog.category ? (
             <>
-              <span>•</span>
+              <span>â€¢</span>
               <span className="text-primary">{blog.category}</span>
             </>
           ) : null}
         </div>
 
-        <h3 className="mt-4 text-xl font-semibold text-white">
+        <h3 className="mt-4 text-xl font-semibold text-zinc-900">
           <Link
             to={`/blog/${blog.slug}`}
             className="transition-colors hover:text-primary"
@@ -43,7 +43,7 @@ function BlogCard({ blog }: BlogCardProps) {
           </Link>
         </h3>
 
-        <p className="mt-4 line-clamp-3 leading-7 text-slate-400">{blog.excerpt}</p>
+        <p className="mt-4 line-clamp-3 leading-7 text-zinc-600">{blog.excerpt}</p>
 
         {blog.tags?.length ? (
           <div className="mt-4 flex flex-wrap gap-2">
@@ -53,10 +53,10 @@ function BlogCard({ blog }: BlogCardProps) {
           </div>
         ) : null}
 
-        <div className="mt-6 border-t border-slate-800 pt-5">
+        <div className="mt-6 border-t border-neutral-200 pt-5">
           <Link
             to={`/blog/${blog.slug}`}
-            className="text-sm font-semibold text-primary transition-colors hover:text-white"
+            className="text-sm font-semibold text-primary transition-colors hover:text-zinc-900"
           >
             Read Article
           </Link>
@@ -67,3 +67,8 @@ function BlogCard({ blog }: BlogCardProps) {
 }
 
 export default BlogCard;
+
+
+
+
+

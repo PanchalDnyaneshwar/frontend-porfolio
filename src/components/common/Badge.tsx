@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from 'react';
+﻿import type { PropsWithChildren } from 'react';
 
 function Badge({ children }: PropsWithChildren) {
   return (
-    <span className="inline-flex rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300">
+    <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-[#0d5f59]">
       {children}
     </span>
   );

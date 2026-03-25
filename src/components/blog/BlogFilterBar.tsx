@@ -1,4 +1,4 @@
-import Input from '@/components/common/Input';
+﻿import Input from '@/components/common/Input';
 import Select from '@/components/common/Select';
 import type { BlogFilterState } from '@/types/blog.types';
 
@@ -10,12 +10,12 @@ interface BlogFilterBarProps {
 
 function BlogFilterBar({ filters, categories, onChange }: BlogFilterBarProps) {
   return (
-    <div className="mb-8 rounded-[2rem] border border-slate-800 bg-slate-900/45 p-5 shadow-soft sm:p-6">
+    <div className="mb-8 rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] p-5 shadow-soft sm:p-6">
       <div className="mb-5">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
           Filter articles
         </p>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-zinc-600">
           Search by title or narrow the list by category.
         </p>
       </div>
@@ -46,3 +46,8 @@ function BlogFilterBar({ filters, categories, onChange }: BlogFilterBarProps) {
 }
 
 export default BlogFilterBar;
+
+
+
+
+

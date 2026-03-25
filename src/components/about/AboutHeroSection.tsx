@@ -1,4 +1,4 @@
-import Section from '@/components/common/Section';
+﻿import Section from '@/components/common/Section';
 import type { Profile } from '@/types/profile.types';
 
 interface AboutHeroSectionProps {
@@ -9,7 +9,7 @@ function AboutHeroSection({ profile }: AboutHeroSectionProps) {
   return (
     <Section className="pb-6">
       <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
-        <div className="overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-soft">
+        <div className="overflow-hidden rounded-[2rem] border border-neutral-200 bg-[#f3ede4] shadow-soft">
           {profile?.profileImage ? (
             <img
               src={profile.profileImage}
@@ -23,40 +23,40 @@ function AboutHeroSection({ profile }: AboutHeroSectionProps) {
           )}
         </div>
 
-        <div className="rounded-[2rem] border border-slate-800 bg-slate-900/45 p-6 shadow-soft sm:p-8 lg:p-10">
+        <div className="rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft sm:p-8 lg:p-10">
           <p className="display-kicker text-primary">
             About Me
           </p>
-          <h1 className="display-title mt-4 text-4xl text-white sm:text-5xl">
+          <h1 className="display-title mt-4 text-4xl sm:text-5xl">
             {profile?.fullName || 'Dnyaneshwar Panchal'}
           </h1>
-          <p className="mt-4 text-xl tracking-[-0.02em] text-slate-300">
+          <p className="mt-4 text-xl tracking-[-0.02em] text-zinc-700">
             {profile?.title || 'Full Stack Developer'}
           </p>
-          <p className="display-copy mt-6 text-slate-400">
+          <p className="display-copy mt-6 text-zinc-600">
             {profile?.longBio ||
               profile?.shortBio ||
               'I enjoy building practical products with thoughtful design, clean architecture and reliable backend integration.'}
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+            <div className="rounded-2xl border border-neutral-200 bg-[#f7f2ea]/90 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Focus
               </p>
-              <p className="mt-2 text-sm font-medium text-slate-200">Full stack products</p>
+              <p className="mt-2 text-sm font-medium text-zinc-800">Full stack products</p>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+            <div className="rounded-2xl border border-neutral-200 bg-[#f7f2ea]/90 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Approach
               </p>
-              <p className="mt-2 text-sm font-medium text-slate-200">Clean, scalable systems</p>
+              <p className="mt-2 text-sm font-medium text-zinc-800">Clean, scalable systems</p>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+            <div className="rounded-2xl border border-neutral-200 bg-[#f7f2ea]/90 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Priority
               </p>
-              <p className="mt-2 text-sm font-medium text-slate-200">Responsive UX quality</p>
+              <p className="mt-2 text-sm font-medium text-zinc-800">Responsive UX quality</p>
             </div>
           </div>
         </div>
@@ -66,3 +66,8 @@ function AboutHeroSection({ profile }: AboutHeroSectionProps) {
 }
 
 export default AboutHeroSection;
+
+
+
+
+

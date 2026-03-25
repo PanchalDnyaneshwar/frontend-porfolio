@@ -1,4 +1,4 @@
-interface PageIntroProps {
+﻿interface PageIntroProps {
   eyebrow?: string;
   title: string;
   description?: string;
@@ -12,12 +12,14 @@ function PageIntro({ eyebrow, title, description }: PageIntroProps) {
           {eyebrow}
         </p>
       ) : null}
-      <h1 className="display-title text-4xl text-white sm:text-5xl">{title}</h1>
+      <h1 className="display-title text-4xl sm:text-5xl">{title}</h1>
       {description ? (
-        <p className="display-copy mt-5 text-lg text-slate-400">{description}</p>
+        <p className="display-copy mt-5 text-lg text-zinc-600">{description}</p>
       ) : null}
     </div>
   );
 }
 
 export default PageIntro;
+
+

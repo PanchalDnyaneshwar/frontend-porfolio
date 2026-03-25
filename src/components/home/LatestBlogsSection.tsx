@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+﻿import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import EmptyState from '@/components/common/EmptyState';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -21,11 +21,11 @@ function LatestBlogsSection({ blogs }: LatestBlogsSectionProps) {
               description="Thoughts, learnings and practical technical write-ups from my development journey."
             />
 
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6 shadow-soft">
+            <div className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Fresh notes
               </p>
-              <p className="mt-4 text-sm leading-7 text-slate-300">
+              <p className="mt-4 text-sm leading-7 text-zinc-700">
                 This section now uses the full home page width better by keeping the blog context
                 on the left and the article previews in a cleaner right-side grid.
               </p>
@@ -70,3 +70,8 @@ function LatestBlogsSection({ blogs }: LatestBlogsSectionProps) {
 }
 
 export default LatestBlogsSection;
+
+
+
+
+

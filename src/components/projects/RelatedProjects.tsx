@@ -1,4 +1,4 @@
-import ProjectGrid from './ProjectGrid';
+﻿import ProjectGrid from './ProjectGrid';
 import type { Project } from '@/types/project.types';
 
 interface RelatedProjectsProps {
@@ -13,7 +13,7 @@ function RelatedProjects({ projects, currentSlug }: RelatedProjectsProps) {
 
   return (
     <div className="mt-16">
-      <h2 className="text-2xl font-semibold text-white">Related Projects</h2>
+      <h2 className="text-2xl font-semibold text-zinc-900">Related Projects</h2>
       <div className="mt-6">
         <ProjectGrid projects={related} />
       </div>
@@ -22,3 +22,4 @@ function RelatedProjects({ projects, currentSlug }: RelatedProjectsProps) {
 }
 
 export default RelatedProjects;
+

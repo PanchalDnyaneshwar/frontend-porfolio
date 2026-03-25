@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+﻿import { useParams } from 'react-router-dom';
 import Container from '@/components/common/Container';
 import ErrorState from '@/components/common/ErrorState';
 import PageLoader from '@/components/common/PageLoader';
@@ -45,7 +45,7 @@ function ProjectDetailsPage() {
       <section className="section-space">
         <Container>
           {project.thumbnail ? (
-            <div className="mb-8 overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-soft sm:mb-10">
+            <div className="mb-8 overflow-hidden rounded-[2rem] border border-neutral-200 bg-[#f3ede4] shadow-soft sm:mb-10">
               <img
                 src={project.thumbnail}
                 alt={project.title}
@@ -74,3 +74,6 @@ function ProjectDetailsPage() {
 }
 
 export default ProjectDetailsPage;
+
+
+

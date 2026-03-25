@@ -1,4 +1,4 @@
-import Badge from '@/components/common/Badge';
+﻿import Badge from '@/components/common/Badge';
 import type { Project } from '@/types/project.types';
 
 interface ProjectDetailsHeroProps {
@@ -11,10 +11,10 @@ function ProjectDetailsHero({ project }: ProjectDetailsHeroProps) {
       <p className="display-kicker text-primary">
         {project.category || 'Project'}
       </p>
-      <h1 className="display-title mt-3 text-4xl text-white sm:text-5xl">
+      <h1 className="display-title mt-3 text-4xl sm:text-5xl">
         {project.title}
       </h1>
-      <p className="display-copy mt-6 max-w-4xl text-lg text-slate-400">
+      <p className="display-copy mt-6 max-w-4xl text-lg text-zinc-600">
         {project.fullDescription || project.shortDescription}
       </p>
 
@@ -30,3 +30,5 @@ function ProjectDetailsHero({ project }: ProjectDetailsHeroProps) {
 }
 
 export default ProjectDetailsHero;
+
+

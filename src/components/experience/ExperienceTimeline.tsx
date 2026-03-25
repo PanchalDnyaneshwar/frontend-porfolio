@@ -1,4 +1,4 @@
-import type { Experience } from '@/types/experience.types';
+﻿import type { Experience } from '@/types/experience.types';
 import ExperienceTimelineItem from './ExperienceTimelineItem';
 
 interface ExperienceTimelineProps {
@@ -8,7 +8,7 @@ interface ExperienceTimelineProps {
 function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
   if (!experiences.length) {
     return (
-      <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 text-slate-400">
+      <div className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 text-zinc-600">
         No experience added yet.
       </div>
     );
@@ -29,3 +29,6 @@ function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
 }
 
 export default ExperienceTimeline;
+
+
+

@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+﻿import Button from '@/components/common/Button';
 import Input from '@/components/common/Input';
 import Textarea from '@/components/common/Textarea';
 import { useContactForm } from '@/hooks/useContactForm';
@@ -9,14 +9,14 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-slate-800 bg-slate-900/45 p-6 shadow-soft sm:p-8"
+      className="rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft sm:p-8"
     >
       <div className="mb-6">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
           Start a conversation
         </p>
-        <h3 className="mt-3 text-2xl font-semibold text-white">Tell me about your project</h3>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
+        <h3 className="mt-3 text-2xl font-semibold text-zinc-900">Tell me about your project</h3>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-600">
           Share the goal, timeline, or any important details. The form stays easy to use on both
           mobile and desktop.
         </p>
@@ -77,7 +77,7 @@ function ContactForm() {
       </div>
 
       <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-        <p className="text-sm leading-6 text-slate-500">
+        <p className="text-sm leading-6 text-zinc-500">
           You&apos;ll get a response as soon as possible with the next best step.
         </p>
         <Button
@@ -93,3 +93,8 @@ function ContactForm() {
 }
 
 export default ContactForm;
+
+
+
+
+

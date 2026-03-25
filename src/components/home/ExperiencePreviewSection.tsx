@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+﻿import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import SectionHeading from '@/components/common/SectionHeading';
 import EmptyState from '@/components/common/EmptyState';
@@ -23,11 +23,11 @@ function ExperiencePreviewSection({ experiences }: ExperiencePreviewSectionProps
               description="A snapshot of roles, contributions and technologies used in real projects."
             />
 
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6 shadow-soft">
+            <div className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Role snapshot
               </p>
-              <p className="mt-4 text-sm leading-7 text-slate-300">
+              <p className="mt-4 text-sm leading-7 text-zinc-700">
                 The left side now carries context and the right side uses a more readable stack of
                 experience cards, so desktop layouts feel fuller and easier to scan.
               </p>
@@ -44,11 +44,11 @@ function ExperiencePreviewSection({ experiences }: ExperiencePreviewSectionProps
             {preview.map((item) => (
               <article
                 key={item._id}
-                className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 shadow-soft"
+                className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">{item.role}</h3>
+                    <h3 className="text-xl font-semibold text-zinc-900">{item.role}</h3>
                     <p className="mt-1 text-primary">{item.companyName}</p>
                   </div>
 
@@ -59,7 +59,7 @@ function ExperiencePreviewSection({ experiences }: ExperiencePreviewSectionProps
                 </div>
 
                 {item.description ? (
-                  <p className="mt-5 leading-7 text-slate-400">{item.description}</p>
+                  <p className="mt-5 leading-7 text-zinc-600">{item.description}</p>
                 ) : null}
 
                 {item.technologies?.length ? (
@@ -67,7 +67,7 @@ function ExperiencePreviewSection({ experiences }: ExperiencePreviewSectionProps
                     {item.technologies.slice(0, 6).map((technology) => (
                       <span
                         key={technology}
-                        className="rounded-full border border-slate-700 bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-300"
+                        className="rounded-full border border-neutral-300 bg-[#f1ebe2]/80 px-3 py-1 text-xs font-medium text-zinc-700"
                       >
                         {technology}
                       </span>
@@ -102,3 +102,8 @@ function ExperiencePreviewSection({ experiences }: ExperiencePreviewSectionProps
 }
 
 export default ExperiencePreviewSection;
+
+
+
+
+

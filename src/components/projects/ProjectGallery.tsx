@@ -1,4 +1,4 @@
-interface ProjectGalleryProps {
+﻿interface ProjectGalleryProps {
   title: string;
   images: string[];
 }
@@ -8,12 +8,12 @@ function ProjectGallery({ title, images }: ProjectGalleryProps) {
 
   return (
     <div className="mt-10">
-      <h2 className="text-2xl font-semibold text-white">Project Gallery</h2>
+      <h2 className="text-2xl font-semibold text-zinc-900">Project Gallery</h2>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         {images.map((image, index) => (
           <div
             key={`${image}-${index}`}
-            className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950"
+            className="overflow-hidden rounded-2xl border border-neutral-200 bg-[#f2e7d8]"
           >
             <img
               src={image}
@@ -28,3 +28,5 @@ function ProjectGallery({ title, images }: ProjectGalleryProps) {
 }
 
 export default ProjectGallery;
+
+

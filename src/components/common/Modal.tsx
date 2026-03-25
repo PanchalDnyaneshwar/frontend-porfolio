@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+﻿import type { PropsWithChildren } from 'react';
 
 interface ModalProps extends PropsWithChildren {
   open: boolean;
@@ -11,13 +11,13 @@ function Modal({ open, onClose, title, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4">
-      <div className="w-full max-w-lg rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-soft">
+      <div className="w-full max-w-lg rounded-2xl border border-neutral-200 bg-[#f5f1ea] p-6 shadow-soft">
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-white"
+            className="text-zinc-600 hover:text-zinc-900"
             aria-label="Close modal"
           >
             x
@@ -30,3 +30,6 @@ function Modal({ open, onClose, title, children }: ModalProps) {
 }
 
 export default Modal;
+
+
+

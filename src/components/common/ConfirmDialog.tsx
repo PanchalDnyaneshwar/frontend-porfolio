@@ -1,4 +1,4 @@
-import Button from './Button';
+﻿import Button from './Button';
 import Modal from './Modal';
 
 interface ConfirmDialogProps {
@@ -18,7 +18,7 @@ function ConfirmDialog({
 }: ConfirmDialogProps) {
   return (
     <Modal open={open} onClose={onClose} title={title}>
-      <p className="text-sm leading-7 text-slate-400">{description}</p>
+      <p className="text-sm leading-7 text-zinc-600">{description}</p>
       <div className="mt-6 flex justify-end gap-3">
         <Button variant="ghost" onClick={onClose}>
           Cancel
@@ -30,3 +30,4 @@ function ConfirmDialog({
 }
 
 export default ConfirmDialog;
+

@@ -1,4 +1,4 @@
-interface SectionHeadingProps {
+﻿interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   description?: string;
@@ -24,12 +24,14 @@ function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="display-title text-3xl text-white sm:text-4xl">{title}</h2>
+      <h2 className="display-title text-3xl sm:text-4xl">{title}</h2>
       {description ? (
-        <p className="display-copy mt-4 max-w-xl text-base text-slate-400">{description}</p>
+        <p className="display-copy mt-4 max-w-xl text-base text-zinc-600">{description}</p>
       ) : null}
     </div>
   );
 }
 
 export default SectionHeading;
+
+

@@ -1,4 +1,4 @@
-import Badge from '@/components/common/Badge';
+﻿import Badge from '@/components/common/Badge';
 import { formatDate } from '@/utils/date';
 import { formatReadTime } from '@/utils/formatters';
 import { sanitizeHtml } from '@/utils/sanitizeHtml';
@@ -13,7 +13,7 @@ function BlogContent({ blog }: BlogContentProps) {
 
   return (
     <article>
-      <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+      <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-600">
         <span>{formatDate(blog.publishedAt)}</span>
         <span>&bull;</span>
         <span>{formatReadTime(blog.readTime)}</span>
@@ -25,7 +25,7 @@ function BlogContent({ blog }: BlogContentProps) {
         ) : null}
       </div>
 
-      <h1 className="display-title mt-4 text-3xl leading-[1.04] text-white sm:text-4xl lg:text-5xl">
+      <h1 className="display-title mt-4 text-3xl leading-[1.04] sm:text-4xl lg:text-5xl">
         {blog.title}
       </h1>
 
@@ -37,7 +37,7 @@ function BlogContent({ blog }: BlogContentProps) {
         </div>
       ) : null}
 
-      <div className="prose prose-invert mt-8 max-w-none prose-headings:text-white prose-p:text-slate-300 prose-li:text-slate-300 sm:mt-10">
+      <div className="prose prose-stone mt-8 max-w-none prose-headings:text-zinc-900 prose-p:text-zinc-700 prose-li:text-zinc-700 sm:mt-10">
         <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
       </div>
     </article>
@@ -45,3 +45,5 @@ function BlogContent({ blog }: BlogContentProps) {
 }
 
 export default BlogContent;
+
+

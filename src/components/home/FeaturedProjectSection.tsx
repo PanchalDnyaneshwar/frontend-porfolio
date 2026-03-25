@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+﻿import Button from '@/components/common/Button';
 import Section from '@/components/common/Section';
 import EmptyState from '@/components/common/EmptyState';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -21,11 +21,11 @@ function FeaturedProjectsSection({ projects }: FeaturedProjectsSectionProps) {
               description="A collection of projects with clean UI, scalable backend logic and responsive implementation."
             />
 
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6 shadow-soft">
+            <div className="rounded-3xl border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
                 Selected builds
               </p>
-              <p className="mt-4 text-sm leading-7 text-slate-300">
+              <p className="mt-4 text-sm leading-7 text-zinc-700">
                 The empty left area is now turned into a proper supporting panel, while the project
                 cards fill the right side in a more balanced two-column layout.
               </p>
@@ -70,3 +70,8 @@ function FeaturedProjectsSection({ projects }: FeaturedProjectsSectionProps) {
 }
 
 export default FeaturedProjectsSection;
+
+
+
+
+

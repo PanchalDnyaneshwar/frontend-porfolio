@@ -1,4 +1,4 @@
-interface PaginationProps {
+﻿interface PaginationProps {
   page: number;
   totalPages: number;
   onChange: (page: number) => void;
@@ -13,18 +13,18 @@ function Pagination({ page, totalPages, onChange }: PaginationProps) {
         type="button"
         disabled={page === 1}
         onClick={() => onChange(page - 1)}
-        className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-lg border border-neutral-300 px-4 py-2 text-sm text-zinc-900 disabled:cursor-not-allowed disabled:opacity-50"
       >
         Previous
       </button>
-      <span className="text-sm text-slate-400">
+      <span className="text-sm text-zinc-600">
         Page {page} of {totalPages}
       </span>
       <button
         type="button"
         disabled={page === totalPages}
         onClick={() => onChange(page + 1)}
-        className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-lg border border-neutral-300 px-4 py-2 text-sm text-zinc-900 disabled:cursor-not-allowed disabled:opacity-50"
       >
         Next
       </button>
@@ -33,3 +33,4 @@ function Pagination({ page, totalPages, onChange }: PaginationProps) {
 }
 
 export default Pagination;
+

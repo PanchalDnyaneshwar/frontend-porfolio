@@ -1,4 +1,4 @@
-import type { Profile } from '@/types/profile.types';
+﻿import type { Profile } from '@/types/profile.types';
 
 interface ProfileSummaryCardProps {
   profile?: Profile | null;
@@ -6,17 +6,17 @@ interface ProfileSummaryCardProps {
 
 function ProfileSummaryCard({ profile }: ProfileSummaryCardProps) {
   return (
-    <div className="rounded-[2rem] border border-slate-800 bg-slate-900/45 p-6 shadow-soft sm:p-7">
+    <div className="rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft sm:p-7">
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/80">
         Overview
       </p>
-      <h3 className="text-xl font-semibold text-white">Profile Summary</h3>
+      <h3 className="text-xl font-semibold text-zinc-900">Profile Summary</h3>
 
-      <p className="mt-4 leading-8 text-slate-400">
+      <p className="mt-4 leading-8 text-zinc-600">
         {profile?.longBio || profile?.shortBio || 'Profile details will be updated soon.'}
       </p>
 
-      <div className="mt-6 space-y-3 border-t border-slate-800 pt-5 text-slate-300">
+      <div className="mt-6 space-y-3 border-t border-neutral-200 pt-5 text-zinc-700">
         {profile?.email ? (
           <p>
             <span className="text-primary">Email:</span> {profile.email}
@@ -40,3 +40,8 @@ function ProfileSummaryCard({ profile }: ProfileSummaryCardProps) {
 }
 
 export default ProfileSummaryCard;
+
+
+
+
+

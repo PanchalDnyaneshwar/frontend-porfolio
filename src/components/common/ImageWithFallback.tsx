@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { classNames } from '@/utils/classNames';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -20,7 +20,7 @@ function ImageWithFallback({
     return (
       <div
         className={classNames(
-          'flex h-full w-full items-center justify-center bg-slate-950 text-sm text-slate-500',
+          'flex h-full w-full items-center justify-center bg-[#f3ede4] text-sm text-zinc-500',
           wrapperClassName,
         )}
       >
@@ -41,3 +41,5 @@ function ImageWithFallback({
 }
 
 export default ImageWithFallback;
+
+
