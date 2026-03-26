@@ -13,9 +13,9 @@ function resolveApiBaseUrl(): string {
   }
 
   console.warn(
-    '[api] VITE_API_BASE_URL is not set; using http://localhost:5000 for development.',
+    '[api] VITE_API_BASE_URL is not set; using same-origin /api (Vite dev proxy → http://localhost:5000).',
   );
-  return 'http://localhost:5000';
+  return '/api';
 }
 
 export const API_BASE_URL = resolveApiBaseUrl();
