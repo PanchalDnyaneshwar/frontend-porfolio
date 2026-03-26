@@ -36,7 +36,7 @@ function ContactPage() {
         description="Get in touch for freelance work, collaboration or full stack development projects."
       />
 
-      <ContactHeroSection />
+      <ContactHeroSection profile={profile} />
 
       <section className="section-space pt-6">
         <Container>

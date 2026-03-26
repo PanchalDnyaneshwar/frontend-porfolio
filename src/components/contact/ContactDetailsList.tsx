@@ -1,4 +1,4 @@
-﻿import type { Settings } from '@/types/settings.types';
+import type { Settings } from '@/types/settings.types';
 
 interface ContactDetailsListProps {
   settings?: Settings | null;
@@ -6,6 +6,7 @@ interface ContactDetailsListProps {
 
 function ContactDetailsList({ settings }: ContactDetailsListProps) {
   const info = settings?.contactInfo;
+  const hasRows = Boolean(info?.email || info?.phone || info?.location);
 
   return (
     <div className="rounded-[2rem] border border-neutral-200 bg-[#fcfaf6] p-6 shadow-soft sm:p-7">
@@ -32,6 +33,11 @@ function ContactDetailsList({ settings }: ContactDetailsListProps) {
             <p className="text-sm text-primary">Location</p>
             <p className="mt-1">{info.location}</p>
           </div>
+        ) : null}
+        {!hasRows ? (
+          <p className="rounded-2xl border border-dashed border-neutral-200 bg-[#f7f2ea]/50 p-4 text-sm text-zinc-600">
+            Additional office details can be added from the admin settings when ready.
+          </p>
         ) : null}
       </div>
     </div>
