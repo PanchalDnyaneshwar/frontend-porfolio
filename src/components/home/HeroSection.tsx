@@ -33,9 +33,9 @@ function HeroSection({ profile }: HeroSectionProps) {
             Full Stack Developer
           </p>
 
-          <h1 className="display-title text-4xl leading-[1.02] sm:text-5xl md:text-6xl xl:text-[4.5rem]">
+          <h1 className="display-title text-3xl leading-[1.02] sm:text-5xl md:text-6xl xl:text-[4.5rem]">
             {profile?.fullName || 'Dnyaneshwar Panchal'}
-            <span className="mt-3 block text-zinc-700">
+            <span className="mt-3 block text-2xl tracking-wide text-zinc-700 ">
               {profile?.title || 'Building scalable and modern web applications.'}
             </span>
           </h1>
